@@ -5,7 +5,7 @@ while read local_ref local_sha remote_ref remote_sha
 do
   for branch in $protected_branches; do
     if echo "$remote_ref" | grep -q "refs/heads/$branch"; then
-      echo "🚨 Direct push to '$branch' branch is disabled. Please use a pull request."
+      echo "🚨 Direct push to '$branch' branch is disabled."
       echo "🙏 Please use a pull request."
       echo "🔗 https://github.com/okahu/portal-ux/pulls"
       exit 1
